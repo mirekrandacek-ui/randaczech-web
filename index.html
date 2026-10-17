@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#120625">
+  <meta name="description" content="RandaCzech Studio creates smart, simple Android and iOS apps for everyday life, games and more.">
+  <title>RandaCzech Studio | Smart apps for everyday life</title>
+  <style>
+    :root { color-scheme:dark; --text:#f8f4ff; --muted:#c9bcd9; --purple:#ba5bff; --pink:#f36de9; }
+    * { box-sizing:border-box }
+    html { scroll-behavior:smooth }
+    body { margin:0; font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:var(--text); background:#0b061a; line-height:1.55 }
+    body:before { content:""; position:fixed; inset:0; z-index:-1; pointer-events:none; background:radial-gradient(ellipse at 80% 10%,#5e21aa70,transparent 38%),radial-gradient(ellipse at 5% 80%,#6222bc65,transparent 45%),linear-gradient(145deg,#180632,#090615 72%); }
+    a { color:inherit; }
+    .wrap { width:min(1060px,calc(100% - 44px)); margin:auto; }
+    header { display:flex; justify-content:space-between; align-items:center; gap:16px; padding:30px 0; }
+    .brand { font-size:1.1rem; font-weight:800; letter-spacing:-.035em; text-decoration:none; }
+    .brand span { color:#d792ff; }
+    nav { display:flex; gap:24px; color:var(--muted); font-size:.92rem; }
+    nav a { text-decoration:none; } nav a:hover { color:white; }
+    main { padding:50px 0 32px; }
+    .hero { position:relative; overflow:hidden; border:1px solid #ffffff23; border-radius:30px; padding:clamp(34px,8vw,82px) clamp(26px,7vw,78px); background:radial-gradient(circle at 82% 38%,#b526ff32,transparent 35%),linear-gradient(120deg,#20103e,#170729 64%,#240c47); box-shadow:0 32px 90px #0007; }
+    .hero:after { content:""; position:absolute; width:340px; height:340px; right:-100px; top:-95px; border:2px solid #db7aff5c; border-radius:50%; box-shadow:0 0 68px #aa41f444,inset 0 0 48px #932ced33; pointer-events:none; }
+    .eyebrow { margin:0 0 18px; color:#dbacff; font-size:.77rem; text-transform:uppercase; letter-spacing:.18em; font-weight:800; }
+    h1 { margin:0; max-width:750px; font-weight:850; font-size:clamp(2.7rem,7.2vw,5.5rem); letter-spacing:-.065em; line-height:1.03; }
+    h1 strong { font-weight:850; background:linear-gradient(110deg,#e8aeff,#b959ff 65%,#f376e5); background-clip:text; -webkit-background-clip:text; color:transparent; }
+    .lead { margin:26px 0 30px; max-width:610px; color:#e4dbef; font-size:clamp(1rem,2vw,1.2rem); }
+    .actions { display:flex; flex-wrap:wrap; gap:12px; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; min-height:46px; padding:10px 20px; border-radius:13px; text-decoration:none; font-weight:750; background:#e7b8ff; color:#1b0730; transition:transform .15s; }
+    .btn:hover { transform:translateY(-2px); }
+    .btn.secondary { background:#ffffff16; border:1px solid #ffffff40; color:#fff; }
+    section { margin-top:62px; }
+    .section-title { font-size:clamp(1.4rem,3.5vw,2rem); letter-spacing:-.035em; margin:0 0 8px; }
+    .section-lead { color:var(--muted); margin:0 0 22px; }
+    .cards { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
+    .card { padding:29px; background:linear-gradient(140deg,#2e18489c,#170f28de); border:1px solid #ffffff20; border-radius:22px; }
+    .icon { display:grid; place-items:center; width:55px; height:55px; border-radius:16px; background:linear-gradient(135deg,#bd6bff,#5728df); font-size:26px; box-shadow:0 12px 24px #832ddc40; }
+    .card h3 { font-size:1.3rem; margin:22px 0 8px; letter-spacing:-.025em; }
+    .card p { color:var(--muted); margin:0 0 18px; }
+    .card a { color:#e4b1ff; text-underline-offset:4px; font-weight:650; }
+    .values { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; margin-top:20px; }
+    .value { border:1px solid #ffffff19; border-radius:16px; padding:20px; color:#e5dcef; background:#ffffff08; }
+    .value b { display:block; margin-bottom:5px; color:#fff; }
+    footer { border-top:1px solid #ffffff1a; margin-top:76px; padding:28px 0 42px; color:#a999be; font-size:.87rem; display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+    @media(max-width:650px){.cards,.values{grid-template-columns:1fr} nav{gap:12px;font-size:.82rem} main{padding-top:18px}.hero:after{width:230px;height:230px;right:-130px;top:-130px}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="/">RandaCzech <span>Studio</span></a>
+      <nav aria-label="Main navigation"><a href="#apps">Our apps</a><a href="#about">About</a></nav>
+    </header>
+    <main>
+      <div class="hero">
+        <p class="eyebrow">Independent app studio</p>
+        <h1>Smart apps for <strong>everyday life.</strong></h1>
+        <p class="lead">Smart Android &amp; iOS apps that combine simplicity, intuitive design and fun to make everyday life easier.</p>
+        <div class="actions"><a class="btn" href="#apps">Explore our apps ↗</a><a class="btn secondary" href="#about">About the studio</a></div>
+      </div>
+      <section id="apps">
+        <h2 class="section-title">Our apps</h2>
+        <p class="section-lead">Practical, enjoyable experiences designed with the user in mind.</p>
+        <div class="cards">
+          <article class="card"><div class="icon" aria-hidden="true">🎯</div><h3>DartScore Pro</h3><p>Keep score and enjoy your darts games with a simple, intuitive companion.</p><a href="https://dartscore-pro.vercel.app/" target="_blank" rel="noopener noreferrer">Discover DartScore Pro ↗</a></article>
+          <article class="card"><div class="icon" aria-hidden="true">🌍</div><h3>Země Město</h3><p>A fresh digital take on the classic word and knowledge game.</p><a href="https://zeme-mesto.vercel.app/" target="_blank" rel="noopener noreferrer">Discover Země Město ↗</a></article>
+        </div>
+      </section>
+      <section id="about">
+        <h2 class="section-title">Built to be simple. Made to be enjoyable.</h2>
+        <p class="section-lead">RandaCzech Studio focuses on accessible apps and playful ideas for everyday use.</p>
+        <div class="values">
+          <div class="value"><b>✦ Intuitive</b>Easy to understand and use.</div>
+          <div class="value"><b>✦ Thoughtful</b>Clean design, useful features.</div>
+          <div class="value"><b>✦ Fun</b>A little more joy in every day.</div>
+        </div>
+      </section>
+    </main>
+    <footer><span>© 2026 RandaCzech Studio</span><span>Independent Android &amp; iOS app development</span></footer>
+  </div>
+</body>
+</html>
