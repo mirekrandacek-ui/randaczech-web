@@ -70,9 +70,11 @@ es:{zm:"Basta: Juego de Categorías",ds:"Dardos: marcador DartScore Pro",tag:"Ap
 pl:{zm:"Państwa Miasta: Gra słowna",ds:"Dart Score Pro: Darts App",tag:"Inteligentne aplikacje na co dzień",b1:"Aplikacje na Androida i iOS na zamówienie",b2:"Czysty i prosty design",b3:"Intuicyjna obsługa",b4:"Codzienne życie łatwiejsze i fajniejsze",gp:"Pobierz z Google Play",as:"Pobierz z App Store",about:"O mnie",aboutText:"Jestem zapalonym początkującym programistą i lubię tworzyć aplikacje. Chcę uprzyjemnić ludziom codzienne życie, a wszystko opieram na przyjaznym dla użytkownika podejściu."},
 ru:{zm:"Страны и города: Словесная игра",ds:"Дартс счётчик: DartScore Pro",tag:"Умные приложения на каждый день",b1:"Приложения для Android и iOS на заказ",b2:"Чистый и простой дизайн",b3:"Интуитивный интерфейс",b4:"Делаем повседневную жизнь проще и веселее",gp:"Доступно в Google Play",as:"Доступно в App Store",about:"Обо мне",aboutText:"Я увлечённый начинающий разработчик, мне нравится создавать приложения. Хочу сделать повседневную жизнь людей веселее, а в основе всего — удобство для пользователя."}};
 const L=[["en","EN"],["cs","CZ"],["de","DE"],["es","ES"],["pl","PL"],["ru","RU"]],box=document.getElementById("lang");
-function set(l){document.documentElement.lang=l;document.querySelectorAll("[data-t]").forEach(e=>e.textContent=T[l][e.dataset.t]);box.querySelectorAll("button").forEach(b=>b.classList.toggle("on",b.dataset.l==l));try{localStorage.setItem("lang",l)}catch(e){}}
-L.forEach(([c,n])=>{const b=document.createElement("button");b.textContent=n;b.dataset.l=c;b.onclick=()=>set(c);box.appendChild(b)});
-let l="en";try{l=localStorage.getItem("lang")||"en"}catch(e){}set(T[l]?l:"en");
+function set(l,remember=false){document.documentElement.lang=l;document.querySelectorAll("[data-t]").forEach(e=>e.textContent=T[l][e.dataset.t]);box.querySelectorAll("button").forEach(b=>b.classList.toggle("on",b.dataset.l==l));if(remember){try{localStorage.setItem("lang",l)}catch(e){}}}
+L.forEach(([c,n])=>{const b=document.createElement("button");b.textContent=n;b.dataset.l=c;b.onclick=()=>set(c,true);box.appendChild(b)});
+let l=null;try{l=localStorage.getItem("lang")}catch(e){}
+if(!T[l]){const supported=new Set(L.map(([c])=>c));const preferred=navigator.languages?.length?navigator.languages:[navigator.language||"en"];l=preferred.map(x=>String(x).toLowerCase().split("-")[0]).find(x=>supported.has(x))||"en";}
+set(l);
 const p=document.getElementById("panel");document.getElementById("ab").onclick=e=>{e.stopPropagation();p.classList.toggle("open")};document.addEventListener("click",()=>p.classList.remove("open"));
 </script>
 
