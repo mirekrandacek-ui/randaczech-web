@@ -1,0 +1,6 @@
+﻿# Local design/source archive – intentionally not deployed
+assets/archive/
+
+# OS/editor noise
+Thumbs.db
+.DS_Store
